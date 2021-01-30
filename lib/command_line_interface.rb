@@ -1,7 +1,7 @@
 require_relative "../lib/scraper.rb"
 require_relative "../lib/student.rb"
-require 'nokogiri'
-require 'colorize'
+require "nokogiri"
+require "colorize"
 
 class CommandLineInterface
   BASE_PATH = "https://learn-co-curriculum.github.io/student-scraper-test-page/"
@@ -13,7 +13,7 @@ class CommandLineInterface
   end
 
   def make_students
-    students_array = Scraper.scrape_index_page(BASE_PATH + 'index.html')
+    students_array = Scraper.scrape_index_page(BASE_PATH + "index.html")
     Student.create_from_collection(students_array)
   end
 
@@ -37,5 +37,4 @@ class CommandLineInterface
       puts "----------------------".colorize(:green)
     end
   end
-
 end
